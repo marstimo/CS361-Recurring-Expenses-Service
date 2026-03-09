@@ -1,0 +1,18 @@
+[
+  {
+    "ruleId": "rent-monthly",
+    "amount": 1200,
+    "category": "Bills",
+    "dayOfMonth": 1,
+    "description": "Monthly rent",
+    "startMonth": "2026-01"
+  },
+  {
+    "ruleId": "netflix-monthly",
+    "amount": 15.49,
+    "category": "Entertainment",
+    "dayOfMonth": 12,
+    "description": "Netflix subscription",
+    "startMonth": "2026-01"
+  }
+]
