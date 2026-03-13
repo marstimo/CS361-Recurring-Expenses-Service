@@ -1,18 +1,23 @@
 [
   {
-    "ruleId": "rent-monthly",
-    "amount": 1200,
-    "category": "Bills",
+    "ruleId": "rent",
+    "amount": 1200.0,
+    "category": "Housing",
     "dayOfMonth": 1,
-    "description": "Monthly rent",
-    "startMonth": "2026-01"
+    "description": "Monthly rent"
   },
   {
-    "ruleId": "netflix-monthly",
-    "amount": 15.49,
-    "category": "Entertainment",
-    "dayOfMonth": 12,
-    "description": "Netflix subscription",
-    "startMonth": "2026-01"
+    "ruleId": "internet",
+    "amount": 60.0,
+    "category": "Utilities",
+    "dayOfMonth": 5,
+    "description": "Internet bill"
+  },
+  {
+    "ruleId": "spotify",
+    "amount": 11.99,
+    "category": "Subscriptions",
+    "dayOfMonth": 10,
+    "description": "Spotify subscription"
   }
 ]
