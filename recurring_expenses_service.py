@@ -6,7 +6,7 @@ from datetime import date, datetime
 from typing import Any, Dict, List, Optional, Tuple
 
 REQUEST_FILE = "recurring_expenses_request.json"
-DONE_FILE = "recurring_expenses_done.json"
+RESPONSE_FILE = "recurring_expenses_done.json"
 ERROR_FILE = "recurring_expenses_error.json"
 
 POLL_INTERVAL = 0.10
@@ -245,12 +245,16 @@ def generate_expenses(
 
 
 def process_one_request() -> None:
-    safe_remove(DONE_FILE)
+    safe_remove(RESPONSE_FILE)
     safe_remove(ERROR_FILE)
 
     request_data = read_json(REQUEST_FILE)
     if not isinstance(request_data, dict):
         raise ValueError("Request file must contain a JSON object.")
+
+    print("\n--- RECURRING EXPENSES SERVICE ---")
+    print("Request received:")
+    print(request_data)
 
     validate_request(request_data)
 
@@ -269,7 +273,11 @@ def process_one_request() -> None:
         "generatedExpenses": generated_entries
     }
 
-    write_json(DONE_FILE, response)
+    write_json(RESPONSE_FILE, response)
+
+    print("Response written:")
+    print(response)
+    print("----------------------------------\n")
 
 
 def run_service() -> None:
